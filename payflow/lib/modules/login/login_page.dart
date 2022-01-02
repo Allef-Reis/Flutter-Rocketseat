@@ -60,7 +60,9 @@ class _LoginPageState extends State<LoginPage> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SocialLoginButton(onTap: controller.googleSignIn),
+                  SocialLoginButton(onTap: () {
+                    controller.googleSignIn(context);
+                  }),
                 ],
               ),
             )
