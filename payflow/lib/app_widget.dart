@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/home/home_page.dart';
-import 'package:payflow/modules/splash/splash_page.dart';
+import 'package:flutter/services.dart';
 
+import 'modules/barcore_scanner/barcode_scanner_page.dart';
+import 'modules/home/home_page.dart';
 import 'modules/login/login_page.dart';
+import 'modules/splash/splash_page.dart';
 import 'shared/themes/app-colors.dart';
 
 class AppWidget extends StatefulWidget {
+  AppWidget() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+  }
+
   @override
   State<AppWidget> createState() => _AppWidgetState();
 }
@@ -18,12 +27,14 @@ class _AppWidgetState extends State<AppWidget> {
       title: 'Pay Flow',
       theme: ThemeData(
         primaryColor: AppColors.primary,
+        primarySwatch: Colors.orange,
       ),
       initialRoute: "/splash",
       routes: {
         "/splash": (context) => SplashPAge(),
         "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
+        "/barcode_scanner": (context) => BarcodeScannerPage(),
       },
     );
   }

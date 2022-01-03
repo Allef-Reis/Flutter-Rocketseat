@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
   final pages = [
-    Container(color: Colors.red),
+    Container(color: Colors.green),
     Container(color: Colors.blue),
   ];
 
@@ -59,16 +59,19 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-                onPressed: () {
-                  controller.setPage(0);
-                  setState(() {});
-                },
-                icon: Icon(
-                  Icons.home,
-                  color: AppColors.primary,
-                )),
+              onPressed: () {
+                controller.setPage(0);
+                setState(() {});
+              },
+              icon: Icon(
+                Icons.home,
+                color: AppColors.primary,
+              ),
+            ),
             GestureDetector(
-              onTap: () {},
+              onDoubleTap: () {
+                Navigator.pushReplacementNamed(context, "/barcode_scanner");
+              },
               child: Container(
                 height: 56,
                 width: 56,
@@ -77,22 +80,24 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.add_box_outlined,
-                      color: AppColors.background,
-                    )),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.add_box_outlined,
+                    color: AppColors.background,
+                  ),
+                ),
               ),
             ),
             IconButton(
-                onPressed: () {
-                  controller.setPage(1);
-                  setState(() {});
-                },
-                icon: Icon(
-                  Icons.description_outlined,
-                  color: AppColors.body,
-                ))
+              onPressed: () {
+                controller.setPage(1);
+                setState(() {});
+              },
+              icon: Icon(
+                Icons.description_outlined,
+                color: AppColors.body,
+              ),
+            )
           ],
         ),
       ),
