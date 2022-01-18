@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:payflow/modules/insert_boleto/insert_boleto_page.dart';
 
 import 'modules/barcore_scanner/barcode_scanner_page.dart';
 import 'modules/home/home_page.dart';
@@ -35,6 +36,7 @@ class _AppWidgetState extends State<AppWidget> {
         "/home": (context) => HomePage(),
         "/login": (context) => LoginPage(),
         "/barcode_scanner": (context) => BarcodeScannerPage(),
+        "/insert_boleto": (context) => InsertBoletoPage(),
       },
     );
   }
