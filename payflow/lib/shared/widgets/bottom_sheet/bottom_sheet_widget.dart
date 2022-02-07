@@ -40,7 +40,7 @@ class BottomSheeetWidget extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(40.0),
+                  padding: const EdgeInsets.all(40),
                   child: Text.rich(
                     TextSpan(
                         text: title,
